@@ -4,23 +4,47 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def new
+  def new_student
     @user = User.new
+    render 'new_student'
   end
 
-  def create
-    @user = User.new(user_params)
+  def new_teacher
+    @user = User.new
+    render 'new_teacher'
+  end
+
+  def create_student
+    @user = User.new(student_params)
     if @user.save
-      flash[:success] = "Welcome to the Sample App!"
+      log_in @user
+      flash[:success] = "Register Successfully!"
       redirect_to @user
     else
-      render 'new'
+      render 'new_student'
+    end
+  end
+
+  def create_teacher
+    @user = User.new(teacher_params)
+    if @user.save
+      flash[:success] = "Register Successfully!"
+      redirect_to @user
+    else
+      render 'new_teacher'
     end
   end
 
   private
-  def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation, :name, :birthday, :age, :gender, :email, :address)
+  def student_params
+    defaults = {activate: true, role: 2}
+    params.require(:user).permit(:username, :password, :password_confirmation, :name, :birthday, :age, :gender, :email, :address).reverse_merge(defaults)
+  end
+
+  private
+  def teacher_params
+    defaults = {activate: false, role: 1}
+    params.require(:user).permit(:username, :password, :password_confirmation, :name, :birthday, :age, :gender, :email, :address).reverse_merge(defaults)
   end
 
 end

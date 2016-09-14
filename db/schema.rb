@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20160913072459) do
     t.string   "name"
     t.integer  "age"
     t.string   "birthday"
-    t.boolean  "gender"
+    t.string   "gender"
     t.string   "email"
     t.string   "address"
     t.boolean  "activate"
