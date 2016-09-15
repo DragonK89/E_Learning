@@ -10,7 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160913072459) do
+ActiveRecord::Schema.define(version: 20160914103954) do
+
+  create_table "course_students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "course_id"
+    t.integer  "user_id"
+    t.boolean  "completed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "subjects"
+    t.string   "code"
+    t.string   "start_date"
+    t.string   "end_date"
+    t.string   "class_time_start"
+    t.string   "class_time_end"
+    t.string   "image"
+    t.integer  "limit_student_number"
+    t.string   "description"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "lessons", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "course_id"
+    t.string   "name"
+    t.string   "headlines"
+    t.string   "tutorial"
+    t.string   "video"
+    t.string   "home_work"
+    t.string   "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "username"
@@ -20,6 +56,7 @@ ActiveRecord::Schema.define(version: 20160913072459) do
     t.string   "birthday"
     t.string   "gender"
     t.string   "email"
+    t.string   "phone"
     t.string   "address"
     t.boolean  "activate"
     t.string   "role"

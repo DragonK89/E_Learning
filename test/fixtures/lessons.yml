@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course_id: 1
+  name: MyString
+  headlines: MyString
+  tutorial: MyString
+  video: MyString
+  home_work: MyString
+  note: MyString
+
+two:
+  course_id: 1
+  name: MyString
+  headlines: MyString
+  tutorial: MyString
+  video: MyString
+  home_work: MyString
+  note: MyString

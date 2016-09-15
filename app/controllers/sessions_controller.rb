@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   def new
     if logged_in?
-      redirect_to home_path(current_user)
+      redirect_to home_path
     end
   end
 
@@ -10,7 +10,11 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:session][:username])
     if user && user.activate && user.authenticate(params[:session][:password])
       log_in user
-      redirect_to user
+      if user.role == '0'
+        redirect_to index_path
+      else
+        redirect_to home_path
+      end
     else
       if user && !user.activate
         flash.now[:danger] = 'Your account is not activated, Please wait!'

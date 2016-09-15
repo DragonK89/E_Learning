@@ -23,12 +23,21 @@
   width: 100% !important;
 }
 
+.btn-no-border {
+  border: none
+}
+
 #page-wrapper {
   margin: 0 !important;
   border-right: 1px solid #e7e7e7;
   h1 {
     text-align: center;
   }
+}
+
+#page-wrapper .table th, #page-wrapper .table td{
+  text-align: center;
+  vertical-align: middle;
 }
 
 #error_explanation {

@@ -8,6 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :birthday
       t.string :gender
       t.string :email
+      t.string :phone
       t.string :address
       t.boolean :activate
       t.string :role

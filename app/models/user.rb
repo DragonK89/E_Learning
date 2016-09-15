@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_many :courses
+  has_many :course_students
+
   validates :username, presence: true, length: {maximum: 50}, uniqueness: {case_sensitive: false}
   validates :name, presence: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

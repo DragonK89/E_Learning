@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post '/signup/student', to: 'users#create_student'
   post '/signup/teacher', to: 'users#create_teacher'
   get '/edit', to: 'users#edit', as: 'edit'
+  patch '/edit/update/:id', to: 'users#change_status', as: 'update_status'
   patch '/edit', to: 'users#update'
   get '/home', to: 'users#show', as: 'home'
   get '/index', to: 'users#index', as: 'index'

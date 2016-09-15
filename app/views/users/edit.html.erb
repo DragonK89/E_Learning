@@ -76,6 +76,14 @@
           </div>
 
           <div class="col-md-12">
+            <%= f.label :phone %>
+            <div class="form-group input-group">
+              <span class="input-group-addon"><i class="fa fa-phone fa-lg" aria-hidden="true"></i></span>
+              <%= f.text_field :phone, class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="col-md-12">
             <%= f.label :address %>
             <div class="form-group input-group">
               <span class="input-group-addon"><i class="fa fa-map" aria-hidden="true"></i></span>
