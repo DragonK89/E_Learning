@@ -9,7 +9,7 @@
   </div>
   <div class="row">
     <div class="col-md-8 col-md-offset-2 padding-0px">
-      <%= form_for(@user,  url: edit_path) do |f| %>
+      <%= form_for(@user, url: edit_path) do |f| %>
           <%= render 'shared/error_messages' %>
 
           <div class="col-md-12">
@@ -71,7 +71,7 @@
             <%= f.label :email %>
             <div class="form-group input-group">
               <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-              <%= f.email_field :email, class: 'form-control' %>
+              <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
             </div>
           </div>
 
@@ -79,7 +79,7 @@
             <%= f.label :phone %>
             <div class="form-group input-group">
               <span class="input-group-addon"><i class="fa fa-phone fa-lg" aria-hidden="true"></i></span>
-              <%= f.text_field :phone, class: 'form-control' %>
+              <%= f.text_field :phone, class: 'form-control' , placeholder: 'Phone'%>
             </div>
           </div>
 
@@ -87,7 +87,7 @@
             <%= f.label :address %>
             <div class="form-group input-group">
               <span class="input-group-addon"><i class="fa fa-map" aria-hidden="true"></i></span>
-              <%= f.text_field :address, class: 'form-control' %>
+              <%= f.text_area :address, class: 'form-control', placeholder: 'Address', rows: '3' %>
             </div>
           </div>
 

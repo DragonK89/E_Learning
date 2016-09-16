@@ -70,7 +70,7 @@
             <%= f.label :email %>
             <div class="form-group input-group">
               <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-              <%= f.email_field :email, class: 'form-control' %>
+              <%= f.email_field :email, class: 'form-control' , placeholder: 'Email'%>
             </div>
           </div>
 
@@ -78,7 +78,7 @@
             <%= f.label :phone %>
             <div class="form-group input-group">
               <span class="input-group-addon"><i class="fa fa-phone fa-lg" aria-hidden="true"></i></span>
-              <%= f.text_field :phone, class: 'form-control' %>
+              <%= f.text_field :phone, class: 'form-control' , placeholder: 'Phone'%>
             </div>
           </div>
 
@@ -86,7 +86,7 @@
             <%= f.label :address %>
             <div class="form-group input-group">
               <span class="input-group-addon"><i class="fa fa-map" aria-hidden="true"></i></span>
-              <%= f.text_field :address, class: 'form-control' %>
+              <%= f.text_area :address, class: 'form-control', placeholder: 'Address', rows: '3' %>
             </div>
           </div>
 

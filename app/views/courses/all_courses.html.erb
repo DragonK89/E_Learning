@@ -1,0 +1,46 @@
+<% provide(:title, 'All Classes') %>
+<div id="page-wrapper">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>All Classes</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+  </div>
+
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Subjects</th>
+      <th>Code</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Students</th>
+      <th>Max Students</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @courses.each do |course| %>
+        <tr>
+          <td><%= course.id %></td>
+          <td><%= course.user.username %></td>
+          <td><%= course.subjects %></td>
+          <td><%= course.code %></td>
+          <td><%= course.start_date %></td>
+          <td><%= course.end_date %></td>
+          <td><%= course.class_time_start %></td>
+          <td><%= course.class_time_end %></td>
+          <td><%= course.limit_student_number - course.course_students.length %></td>
+          <td><%= course.limit_student_number %></td>
+          <td>
+            <%= link_to "<i class='fa fa-pencil-square-o fa-lg' aria-hidden='true'></i>".html_safe, class_edit_path(course), class: 'btn btn-default btn-no-border' %>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   def create_teacher
     @user = User.new(teacher_params)
     if @user.save
-      log_in user
+      log_in @user
       flash[:success] = "Register Successfully!"
       redirect_back_or @user
     else
