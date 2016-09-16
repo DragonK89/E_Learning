@@ -1,100 +1,98 @@
 <% provide(:title, 'Add Class') %>
-<div id="page-wrapper">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Add a Class</h1>
-    </div>
-    <!-- /.col-lg-12 -->
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">Add a Class</h1>
   </div>
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2 padding-0px">
-      <%= form_for(@courses, url: class_add_path) do |f| %>
-          <%= render 'shared/error_messages' %>
+  <!-- /.col-lg-12 -->
+</div>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 padding-0px">
+    <%= form_for(@courses, url: class_add_path) do |f| %>
+        <%= render 'shared/error_messages' %>
 
-          <div class="col-md-12">
-            <%= f.label :name %>
-            <div class="form-group input-group">
-              <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-              <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
-            </div>
+        <div class="col-md-12">
+          <%= f.label :name %>
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+            <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
           </div>
+        </div>
 
-          <div class="col-md-12">
-            <%= f.label :code %>
-            <div class="form-group input-group">
-              <span class="input-group-addon"><i class="fa fa-barcode" aria-hidden="true"></i></span>
-              <%= f.text_field :code, class: 'form-control', placeholder: 'Code' %>
-            </div>
+        <div class="col-md-12">
+          <%= f.label :code %>
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="fa fa-barcode" aria-hidden="true"></i></span>
+            <%= f.text_field :code, class: 'form-control', placeholder: 'Code' %>
           </div>
+        </div>
 
-          <div class="col-md-12">
-            <%= f.label :subjects %>
-            <div class="form-group input-group">
-              <span class="input-group-addon"><i class="fa fa-book" aria-hidden="true"></i></span>
-              <%= f.text_field :subjects, class: 'form-control', placeholder: 'Subjects' %>
-            </div>
+        <div class="col-md-12">
+          <%= f.label :subjects %>
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="fa fa-book" aria-hidden="true"></i></span>
+            <%= f.text_field :subjects, class: 'form-control', placeholder: 'Subjects' %>
           </div>
+        </div>
 
-          <div class="col-md-6">
-            <%= f.label :start_date %>
-            <div class="form-group input-group">
-              <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-              <%= f.date_field :start_date, class: 'form-control' %>
-            </div>
+        <div class="col-md-6">
+          <%= f.label :start_date %>
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+            <%= f.date_field :start_date, class: 'form-control' %>
           </div>
+        </div>
 
-          <div class="col-md-6">
-            <%= f.label :end_date %>
-            <div class="form-group input-group">
-              <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-              <%= f.date_field :end_date, class: 'form-control' %>
-            </div>
+        <div class="col-md-6">
+          <%= f.label :end_date %>
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+            <%= f.date_field :end_date, class: 'form-control' %>
           </div>
+        </div>
 
-          <div class="col-md-6">
-            <%= f.label :class_time_start %>
-            <div class="form-group input-group">
-              <span class="input-group-addon"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
-              <%= f.time_field :class_time_start, class: 'form-control' %>
-            </div>
+        <div class="col-md-6">
+          <%= f.label :class_time_start %>
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+            <%= f.time_field :class_time_start, class: 'form-control' %>
           </div>
+        </div>
 
-          <div class="col-md-6">
-            <%= f.label :class_time_end %>
-            <div class="form-group input-group">
-              <span class="input-group-addon"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
-              <%= f.time_field :class_time_end, class: 'form-control' %>
-            </div>
+        <div class="col-md-6">
+          <%= f.label :class_time_end %>
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+            <%= f.time_field :class_time_end, class: 'form-control' %>
           </div>
+        </div>
 
-          <div class="col-md-12">
-            <%= f.label :image %>
-            <div class="form-group input-group">
-              <span class="input-group-addon" style="padding-right: 10px; padding-left: 10px"><i class="fa fa-picture-o fa-lg" aria-hidden="true"></i></span>
-              <%= f.file_field :image, class: 'form-control' %>
-            </div>
+        <div class="col-md-12">
+          <%= f.label :image %>
+          <div class="form-group input-group">
+            <span class="input-group-addon" style="padding-right: 10px; padding-left: 10px"><i class="fa fa-picture-o fa-lg" aria-hidden="true"></i></span>
+            <%= f.file_field :image, class: 'form-control' %>
           </div>
+        </div>
 
-          <div class="col-md-12">
-            <%= f.label :limit_student_number %>
-            <div class="form-group input-group">
-              <span class="input-group-addon" style="padding-left: 8px; padding-right: 8px"><i class="fa fa-graduation-cap  fa-lg" aria-hidden="true"></i></span>
-              <%= f.text_field :limit_student_number, class: 'form-control' %>
-            </div>
+        <div class="col-md-12">
+          <%= f.label :limit_student_number %>
+          <div class="form-group input-group">
+            <span class="input-group-addon" style="padding-left: 8px; padding-right: 8px"><i class="fa fa-graduation-cap  fa-lg" aria-hidden="true"></i></span>
+            <%= f.text_field :limit_student_number, class: 'form-control' %>
           </div>
+        </div>
 
-          <div class="col-md-12">
-            <%= f.label :description %>
-            <div class="form-group input-group">
-              <span class="input-group-addon"><i class="fa fa-sticky-note fa-lg" aria-hidden="true"></i></span>
-              <%= f.text_area :description, class: 'form-control', rows: '3' %>
-            </div>
+        <div class="col-md-12">
+          <%= f.label :description %>
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="fa fa-sticky-note fa-lg" aria-hidden="true"></i></span>
+            <%= f.text_area :description, class: 'form-control', rows: '3' %>
           </div>
+        </div>
 
-          <div class="col-md-8 col-md-offset-2">
-            <%= f.submit "Create my class", class: "btn btn-primary width-100-per" %>
-          </div>
-      <% end %>
-    </div>
+        <div class="col-md-8 col-md-offset-2">
+          <%= f.submit "Create my class", class: "btn btn-primary width-100-per" %>
+        </div>
+    <% end %>
   </div>
 </div>
